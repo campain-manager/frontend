@@ -1,10 +1,5 @@
 "use client"
 
-import { useGetEnergyMix } from '@/api/energy-mix-controller/energy-mix-controller';
-import EnergyMixCard from '@/components/EnergyMixCard';
-import { Alert, AlertColor, AlertProps, AlertPropsColorOverrides, Box } from '@mui/material';
-import { OverridableStringUnion } from '@mui/types';
-
 const COLORS: { [name: string]: string } = {
     hydro: "#2196F3",
     wind: "#90CAF9",

@@ -97,7 +97,7 @@ export interface KeywordResponse {
   keyword?: string;
 }
 
-export type SearchKeywordsParams = {
+export type GetKeywordsParams = {
 /**
  * @minLength 1
  */

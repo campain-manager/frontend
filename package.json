@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate-api && next build",
+    "build": "npm run generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "generate-api": "orval"
+    "generate-api": "orval",
+    "generate-provider": "tsx scripts/generate-data-provider.ts",
+    "generate": "npm run generate-api && npm run generate-provider"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -15,11 +17,15 @@
     "@mui/icons-material": "^9.2.0",
     "@mui/material": "^9.2.0",
     "@mui/material-nextjs": "^9.1.1",
-    "@tanstack/react-query": "^5.101.2",
+    "@refinedev/core": "^5.0.12",
+    "@refinedev/nextjs-router": "^7.0.5",
+    "@refinedev/react-hook-form": "^5.0.4",
+    "@tanstack/react-query": "^5.101.4",
     "axios": "^1.18.1",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-hook-form": "^7.83.0",
     "recharts": "^3.9.2"
   },
   "devDependencies": {
@@ -30,8 +36,12 @@
     "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "l": "^0.6.0",
     "orval": "^7.13.2",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4",
+    "ts-morph": "^28.0.0",
+    "tsx": "^4.23.1",
     "typescript": "^5"
   }
 }

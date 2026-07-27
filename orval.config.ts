@@ -9,11 +9,16 @@ export default defineConfig({
     backendApi: {
         input: `${process.env.NEXT_PUBLIC_API_URL}/v3/api-docs`,
         output: {
-            mode: "tags-split",
+            mode: "single",
             target: "src/api/generated.ts",
             client: "react-query",
             httpClient: "axios",
-            baseUrl: process.env.NEXT_PUBLIC_API_URL
+            override: {
+                mutator: {
+                    path: "./src/api/axios.ts",
+                    name: "api"
+                }
+            }
         },
     },
 });

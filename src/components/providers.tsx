@@ -7,6 +7,7 @@ import { useState } from "react";
 
 import theme from "@/theme";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter"; // must comply with the version of nextjs
+import { RefineProvider } from "@/providers/RefineProvider";
 
 export default function Providers({
     children,
@@ -20,7 +21,9 @@ export default function Providers({
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <QueryClientProvider client={queryClient}>
-                    {children}
+                    <RefineProvider>
+                        {children}
+                    </RefineProvider>
                 </QueryClientProvider>
             </ThemeProvider>
         </AppRouterCacheProvider>
